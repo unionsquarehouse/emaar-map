@@ -388,12 +388,133 @@ export default function ProjectMap({ handleMainLocationClick }) {
                     style={{ pointerEvents: "none" }}
                   >
                     <object
-                      data="/the_oasis_project_map.svg"
+                      data="/oasis.svg"
                       type="image/svg+xml"
                       className="w-full h-full"
                       style={{ pointerEvents: "auto" }}
                       onClick={handleMainProjectSVGClick}
                     >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/grand-polo.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/grand-polo.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/emaar-south.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/dubai-hills.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/expo-living.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/dubai-creek-harbour.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/rashid-yachts.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
+                      Your browser does not support SVG
+                    </object>
+                  </div>
+                  <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    <object
+                      data="/the-valley.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full"
+                      style={{ pointerEvents: "auto" }}
+                      onClick={handleMainProjectSVGClick}
+                    >
+                      
                       Your browser does not support SVG
                     </object>
                   </div>
