@@ -65,7 +65,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
     },
   ]);
 
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(true);
 
   const [clickedButton, setClickedButton] = useState(0);
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -99,6 +99,21 @@ export default function ProjectMap({ handleMainLocationClick }) {
 
   const handleMainProjectSVGClick = () => {
     handleMainLocationClick();
+  };
+
+  const handleLocationClick = (location) => {
+    setSelectedLocation(location);
+    setShowInfoCard(true);
+  };
+
+  const handleThreeSixtyClick = (threeSixty) => {
+    // Handle three sixty click
+    console.log("Three sixty clicked:", threeSixty);
+  };
+
+  const handleInventoryClick = (inventory) => {
+    // Handle inventory click
+    console.log("Inventory clicked:", inventory);
   };
 
   // Calculate distance between two points
@@ -206,7 +221,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
   return (
     <>
       <div className="w-full h-screen bg-gray-200 overflow-hidden flex justify-center items-center">
-        {initialScale && mainProjectData ? (
+        {(
           <TransformWrapper
             ref={transformRef}
             initialScale={initialScale}
@@ -241,9 +256,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       quality={100}
                       priority
                       unoptimized
-                      className={`pointer-events-none ${
-                        isImageLoaded ? "opacity-100" : "opacity-0"
-                      }`}
+                      className="pointer-events-none opacity-100"
                     />
 
                     {/* Location Markers */}
@@ -493,28 +506,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
               </div>
             )}
           </TransformWrapper>
-        ) : (
-          <div className="w-full h-screen bg-black flex items-center justify-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white"></div>
-          </div>
-        )}
-
-        {!isImageLoaded && (
-          <div className="absolute top-0 left-0 w-full h-screen bg-black flex items-center justify-center z-[9998]">
-            <div className="relative w-[100px] h-[100px] animate-bounce">
-              <Image
-                src="https://res.cloudinary.com/dkhns25jh/image/upload/v1733821293/xr_media/sqmxma6remiuh1mbv4x7.png"
-                alt="Loading..."
-                fill
-                priority
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                className="object-contain"
-              />
-            </div>
-          </div>
         )}
 
         {showInfoCard && (
