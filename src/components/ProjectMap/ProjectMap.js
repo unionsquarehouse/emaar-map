@@ -81,6 +81,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
 
   const [showSVG, setShowSVG] = useState(false);
   const [mainProjectData, setMainProjectData] = useState(null);
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   const transformRef = useRef(null);
 
@@ -263,106 +264,106 @@ export default function ProjectMap({ handleMainLocationClick }) {
 
                     {/* Location Markers - COMMENTED OUT FOR NOW */}
                     {/* {(showMarkers === "landmarks" ||
-                       showMarkers === "show all") &&
-                       mainProjectData?.main_project_map_landmarks?.map(
-                         (marker, index) => (
-                           <div
-                             key={marker.id}
-                             className="absolute w-10 h-10 text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                             style={{
-                               top: parseInt(marker.y),
-                               left: parseInt(marker.x),
-                               position: "absolute",
-                               zIndex: 10,
-                             }}
-                             onClick={() => {
-                               setSelectedLocation(marker);
-                               setSelectedMarkerIndex(index);
-                               setShowSVG(true);
-                               setIsHovered(false);
-                               setShowInfoCard(true);
-                             }}
-                           >
-                             <LocationMarker
-                               key={marker.id}
-                               location={marker}
-                               index={index}
-                               selectedMarkerIndex={selectedMarkerIndex}
-                               setIsHovered={setIsHovered}
-                               showSVG={showSVG}
-                               isHovered={isHovered}
-                             />
-                           </div>
-                         )
+                      showMarkers === "show all") &&
+                      mainProjectData?.main_project_map_landmarks?.map(
+                        (marker, index) => (
+                          <div
+                            key={marker.id}
+                            className="absolute w-10 h-10 text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                            style={{
+                              top: parseInt(marker.y),
+                              left: parseInt(marker.x),
+                              position: "absolute",
+                              zIndex: 10,
+                            }}
+                            onClick={() => {
+                              setSelectedLocation(marker);
+                              setSelectedMarkerIndex(index);
+                              setShowSVG(true);
+                              setIsHovered(false);
+                              setShowInfoCard(true);
+                            }}
+                          >
+                            <LocationMarker
+                              key={marker.id}
+                              location={marker}
+                              index={index}
+                              selectedMarkerIndex={selectedMarkerIndex}
+                              setIsHovered={setIsHovered}
+                              showSVG={showSVG}
+                              isHovered={isHovered}
+                            />
+                          </div>
+                        )
                        )} */}
 
                     {/* HealthCare Markers - COMMENTED OUT FOR NOW */}
                     {/* {(showMarkers === "healthcare" ||
-                       showMarkers === "show all") &&
-                       !showSVG &&
-                       mainProjectData?.main_map_healthcare_markers?.map(
-                         (marker) => (
-                           <div
-                             key={marker.id}
-                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                             style={{
-                               top: parseInt(marker.y),
-                               left: parseInt(marker.x),
-                               position: "absolute",
-                               zIndex: 10,
-                             }}
-                           >
-                             <HealthCareMarker
-                               key={marker.id}
-                               location={marker}
-                             />
-                           </div>
-                         )
+                      showMarkers === "show all") &&
+                      !showSVG &&
+                      mainProjectData?.main_map_healthcare_markers?.map(
+                        (marker) => (
+                          <div
+                            key={marker.id}
+                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                            style={{
+                              top: parseInt(marker.y),
+                              left: parseInt(marker.x),
+                              position: "absolute",
+                              zIndex: 10,
+                            }}
+                          >
+                            <HealthCareMarker
+                              key={marker.id}
+                              location={marker}
+                            />
+                          </div>
+                        )
                        )} */}
 
                     {/* Education Markers - COMMENTED OUT FOR NOW */}
                     {/* {(showMarkers === "education" ||
-                       showMarkers === "show all") &&
-                       !showSVG &&
-                       mainProjectData?.main_map_education_markers?.map(
-                         (marker) => (
-                           <div
-                             key={marker.id}
-                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                             style={{
-                               top: parseInt(marker.y),
-                               left: parseInt(marker.x),
-                               position: "absolute",
-                               zIndex: 10,
-                             }}
-                           >
-                             <EducationMarker
-                               key={marker.id}
-                               location={marker}
-                             />
-                           </div>
-                         )
+                      showMarkers === "show all") &&
+                      !showSVG &&
+                      mainProjectData?.main_map_education_markers?.map(
+                        (marker) => (
+                          <div
+                            key={marker.id}
+                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                            style={{
+                              top: parseInt(marker.y),
+                              left: parseInt(marker.x),
+                              position: "absolute",
+                              zIndex: 10,
+                            }}
+                          >
+                            <EducationMarker
+                              key={marker.id}
+                              location={marker}
+                            />
+                          </div>
+                        )
                        )} */}
 
                     {/* Shopping Markers - COMMENTED OUT FOR NOW */}
                     {/* {(showMarkers === "shopping" ||
-                       showMarkers === "show all") &&
-                       !showSVG &&
-                       mainProjectData?.main_map_shopping_markers?.map(
-                         (marker) => (
-                           <div
-                             key={marker.id}
-                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                             style={{
-                               top: parseInt(marker.y),
-                               left: parseInt(marker.x),
-                               position: "absolute",
-                               zIndex: 10,
-                             }}
-                           >
-                             <ShoppingMarker key={marker.id} location={marker} />
-                           </div>
-                         )
+                      showMarkers === "show all") &&
+                      !showSVG &&
+                      mainProjectData?.main_map_shopping_markers?.map(
+                        (marker) => (
+                          <div
+                            key={marker.id}
+                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                            style={{
+                              top: parseInt(marker.y),
+                              left: parseInt(marker.x),
+                              position: "absolute",
+                              zIndex: 10,
+                            }}
+                          >
+                            <ShoppingMarker key={marker.id} location={marker} />
+                          </div>
+                        )
                        )} */}
                   </div>
 
@@ -392,6 +393,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("The Oasis")}
+                        onMouseEnter={() => setHoveredProject("oasis")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           The Oasis
@@ -407,6 +410,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Grand Polo")}
+                        onMouseEnter={() => setHoveredProject("grand-polo")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Grand Polo
@@ -422,6 +427,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Emaar South")}
+                        onMouseEnter={() => setHoveredProject("emaar-south")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Emaar South
@@ -437,6 +444,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Dubai Hills")}
+                        onMouseEnter={() => setHoveredProject("dubai-hills")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Dubai Hills
@@ -452,6 +461,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Expo Living")}
+                        onMouseEnter={() => setHoveredProject("expo-living")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Expo Living
@@ -467,6 +478,10 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Dubai Creek Harbour")}
+                        onMouseEnter={() =>
+                          setHoveredProject("dubai-creek-harbour")
+                        }
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Dubai Creek Harbour
@@ -482,6 +497,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("Rashid Yachts")}
+                        onMouseEnter={() => setHoveredProject("rashid-yachts")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           Rashid Yachts
@@ -497,6 +514,8 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
                         onClick={() => console.log("The Valley")}
+                        onMouseEnter={() => setHoveredProject("the-valley")}
+                        onMouseLeave={() => setHoveredProject(null)}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
                           The Valley
@@ -504,51 +523,65 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       </button>
                     </div>
                   </div>
+
+                  {/* Hovered Project SVG Display */}
+                  {hoveredProject && (
+                    <div
+                      className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                      style={{ zIndex: 15 }}
+                    >
+                      <img
+                        src={`/${hoveredProject}.svg`}
+                        alt={hoveredProject}
+                        className="w-full h-full opacity-80 transition-opacity duration-300"
+                      />
+                    </div>
+                  )}
                   {/* Main Project location SVG End */}
                 </TransformComponent>
 
                 {/* Bottom Buttons Start - COMMENTED OUT FOR NOW */}
                 {/* <div className="fixed bottom-0 left-0 w-full pb-5 flex justify-center items-center z-50 scale-50 md:scale-100">
-                   <div className="relative flex items-center justify-center w-full max-w-4xl px-12">
-                     <div
-                       ref={buttonsContainerRef}
-                       className="flex flex-row justify-start items-center gap-4 overflow-x-auto scrollbar-hide px-4 flex-grow"
-                       onScroll={checkScrollability}
-                       style={{
-                         scrollbarWidth: "none",
-                         msOverflowStyle: "none",
-                         WebkitOverflowScrolling: "touch",
-                       }}
-                     >
-                       {buttons.map((button, index) => (
-                         <button
-                           key={index}
-                           onClick={() => handleButtonClick(index)}
-                           className={`bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-4 py-2 cursor-pointer ${
-                             clickedButton === index ? "bg-white text-black" : ""
-                           }`}
-                         >
-                           <span
-                             className={`size-6 ${
-                               clickedButton === index
-                                 ? "text-black"
-                                 : "text-white"
-                             }`}
-                             dangerouslySetInnerHTML={{ __html: button.svgIcon }}
-                           />
-                           <span
-                             className={`font-bold text-sm whitespace-nowrap ${
-                               clickedButton === index
-                                 ? "text-black"
-                                 : "text-white"
-                             }`}
-                           >
-                             {button.label}
-                           </span>
-                         </button>
-                       ))}
-                     </div>
-                   </div>
+                  <div className="relative flex items-center justify-center w-full max-w-4xl px-12">
+                    <div
+                      ref={buttonsContainerRef}
+                      className="flex flex-row justify-start items-center gap-4 overflow-x-auto scrollbar-hide px-4 flex-grow"
+                      onScroll={checkScrollability}
+                      style={{
+                        scrollbarWidth: "none",
+                        msOverflowStyle: "none",
+                        WebkitOverflowScrolling: "touch",
+                      }}
+                    >
+                      {buttons.map((button, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleButtonClick(index)}
+                          className={`bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-4 py-2 cursor-pointer ${
+                            clickedButton === index ? "bg-white text-black" : ""
+                          }`}
+                        >
+                          <span
+                            className={`size-6 ${
+                              clickedButton === index
+                                ? "text-black"
+                                : "text-white"
+                            }`}
+                            dangerouslySetInnerHTML={{ __html: button.svgIcon }}
+                          />
+                          <span
+                            className={`font-bold text-sm whitespace-nowrap ${
+                              clickedButton === index
+                                ? "text-black"
+                                : "text-white"
+                            }`}
+                          >
+                            {button.label}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                  </div> */}
                 {/* Bottom Buttons End */}
 
