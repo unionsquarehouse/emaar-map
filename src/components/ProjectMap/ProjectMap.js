@@ -13,6 +13,8 @@ import LocationMarker from "../Markers/LocationMarker";
 import HealthCareMarker from "../Markers/HealthCareMarker";
 import EducationMarker from "../Markers/EducationMarker";
 import ShoppingMarker from "../Markers/ShoppingMarker";
+import ThreeSixtyMarker from "../Markers/ThreeSixtyMarker";
+import InventoryMarker from "../Markers/InventoryMarkers/Locator";
 import ProjectMapInfoCard from "../ProjectMapInfoCard/ProjectMapInfoCard";
 import { useParams } from "next/navigation";
 import { FETCH_ALL_PROJECTS } from "@/constants/constants";
@@ -221,7 +223,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
   return (
     <>
       <div className="w-full h-screen bg-gray-200 overflow-hidden flex justify-center items-center">
-        {(
+        {
           <TransformWrapper
             ref={transformRef}
             initialScale={initialScale}
@@ -506,7 +508,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
               </div>
             )}
           </TransformWrapper>
-        )}
+        }
 
         {showInfoCard && (
           <ProjectMapInfoCard
