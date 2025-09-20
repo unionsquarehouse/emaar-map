@@ -382,141 +382,191 @@ export default function ProjectMap({ handleMainLocationClick }) {
                   )}
                   {/* SVG Line between selected location and markers */}
 
-                  {/* Main Project location SVG */}
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/oasis.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                  {/* Project Buttons with SVGs */}
+                  <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                    {/* Oasis Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "660px", top: "540px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/grand-polo.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("The Oasis")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                         The Oasis
+                        </span>
+                      </button>
+                      <object
+                        data="/oasis.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Oasis SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Grand Polo Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "590px", top: "814px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/grand-polo.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Grand Polo")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Grand Polo
+                        </span>
+                      </button>
+                      <object
+                        data="/grand-polo.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Grand Polo SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Emaar South Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "200px", top: "860px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/emaar-south.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Emaar South")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Emaar South
+                        </span>
+                      </button>
+                      <object
+                        data="/emaar-south.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Emaar South SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Dubai Hills Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "850px", top: "507px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/dubai-hills.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Dubai Hills")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Dubai Hills
+                        </span>
+                      </button>
+                      <object
+                        data="/dubai-hills.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Dubai Hills SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Expo Living Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "450px", top: "500px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/expo-living.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Expo Living")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Expo Living
+                        </span>
+                      </button>
+                      <object
+                        data="/expo-living.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Expo Living SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Dubai Creek Harbour Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "1167px", top: "572px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/dubai-creek-harbour.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Dubai Creek Harbour")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Dubai Creek Harbour
+                        </span>
+                      </button>
+                      <object
+                        data="/dubai-creek-harbour.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Dubai Creek Harbour SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* Rashid Yachts Button */}
+                    <div
+                      className="absolute"
+                      style={{ right: "345px", top: "150px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/rashid-yachts.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("Rashid Yachts")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          Rashid Yachts
+                        </span>
+                      </button>
+                      <object
+                        data="/rashid-yachts.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("Rashid Yachts SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
+
+                    {/* The Valley Button */}
+                    <div
+                      className="absolute"
+                      style={{ left: "1100px", top: "910px" }}
                     >
-                      
-                      Your browser does not support SVG
-                    </object>
-                  </div>
-                  <div
-                    className="absolute top-0 left-0 w-full h-full"
-                    style={{ pointerEvents: "none" }}
-                  >
-                    <object
-                      data="/the-valley.svg"
-                      type="image/svg+xml"
-                      className="w-full h-full"
-                      style={{ pointerEvents: "auto" }}
-                      onClick={handleMainProjectSVGClick}
-                    >
-                      
-                      Your browser does not support SVG
-                    </object>
+                      <button
+                        className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
+                        onClick={() => console.log("The Valley")}
+                      >
+                        <span className="font-bold text-sm whitespace-nowrap">
+                          The Valley
+                        </span>
+                      </button>
+                      <object
+                        data="/the-valley.svg"
+                        type="image/svg+xml"
+                        className="w-32 h-32 mt-2 pointer-events-auto"
+                        onClick={() => console.log("The Valley SVG")}
+                      >
+                        Your browser does not support SVG
+                      </object>
+                    </div>
                   </div>
                   {/* Main Project location SVG End */}
                 </TransformComponent>
