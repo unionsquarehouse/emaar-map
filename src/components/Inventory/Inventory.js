@@ -144,7 +144,7 @@ export default function Inventory({ setSideBarButtonClicked }) {
   return (
     <>
       <div className="w-full h-screen bg-gray-200 overflow-hidden flex justify-center items-center">
-        {!showSubCommunity && inventoryData && (
+        {!showSubCommunity && inventoryData && isImageLoaded ? (
           <TransformWrapper
             ref={transformRef}
             initialScale={initialScale}
@@ -178,9 +178,7 @@ export default function Inventory({ setSideBarButtonClicked }) {
                       quality={100}
                       priority
                       unoptimized
-                      className={`pointer-events-none ${
-                        isImageLoaded ? "opacity-100" : "opacity-0"
-                      }`}
+                      className="pointer-events-none opacity-100"
                     />
                     {inventoryData?.inventory_locator_marker?.map(
                       (location) => (
@@ -206,6 +204,10 @@ export default function Inventory({ setSideBarButtonClicked }) {
               </div>
             )}
           </TransformWrapper>
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-black">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
         )}
         <AnimatePresence>
           {handle360MarkerClick && (
@@ -223,23 +225,6 @@ export default function Inventory({ setSideBarButtonClicked }) {
             // ThreeSixtyMarkers={inventoryData?.inventory_three_sixty_markers}
             setSelectedThreeSixtyMarker={setSelectedThreeSixtyMarker}
           />
-        )}
-        {!isImageLoaded && (
-          <div className="absolute top-0 left-0 w-full h-screen bg-black flex items-center justify-center z-[9999]">
-            <div className="relative w-[100px] h-[100px] animate-bounce">
-              <Image
-                src="https://res.cloudinary.com/dkhns25jh/image/upload/v1733821293/xr_media/sqmxma6remiuh1mbv4x7.png"
-                alt="Loading..."
-                fill
-                priority
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                className="object-contain"
-              />
-            </div>
-          </div>
         )}
         {showSubCommunity && (
           <SubCommunity

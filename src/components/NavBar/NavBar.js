@@ -48,12 +48,12 @@ export default function NavBar({ isFullScreen, setIsFullScreen }) {
         <Tooltip id="back-button-tooltip" />
         <Image
           onClick={() => redirect("/")}
-          src="/xr_logo_black.png"
+          src="/logo.png"
           alt="Xperience Realty Real Estate"
-          width={100}
-          height={100}
+          width={120}
+          height={40}
           priority
-          className="w-15 h-10 md:w-22 md:h-15 lg:w-22 lg:h-15 xl:w-22 xl:h-15 cursor-pointer"
+          className="cursor-pointer object-contain"
         />
       </div>
 

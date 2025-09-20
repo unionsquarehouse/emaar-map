@@ -261,109 +261,109 @@ export default function ProjectMap({ handleMainLocationClick }) {
                       className="pointer-events-none opacity-100"
                     />
 
-                    {/* Location Markers */}
-                    {(showMarkers === "landmarks" ||
-                      showMarkers === "show all") &&
-                      mainProjectData?.main_project_map_landmarks?.map(
-                        (marker, index) => (
-                          <div
-                            key={marker.id}
-                            className="absolute w-10 h-10 text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                            style={{
-                              top: parseInt(marker.y),
-                              left: parseInt(marker.x),
-                              position: "absolute",
-                              zIndex: 10,
-                            }}
-                            onClick={() => {
-                              setSelectedLocation(marker);
-                              setSelectedMarkerIndex(index);
-                              setShowSVG(true);
-                              setIsHovered(false);
-                              setShowInfoCard(true);
-                            }}
-                          >
-                            <LocationMarker
-                              key={marker.id}
-                              location={marker}
-                              index={index}
-                              selectedMarkerIndex={selectedMarkerIndex}
-                              setIsHovered={setIsHovered}
-                              showSVG={showSVG}
-                              isHovered={isHovered}
-                            />
-                          </div>
-                        )
-                      )}
+                    {/* Location Markers - COMMENTED OUT FOR NOW */}
+                    {/* {(showMarkers === "landmarks" ||
+                       showMarkers === "show all") &&
+                       mainProjectData?.main_project_map_landmarks?.map(
+                         (marker, index) => (
+                           <div
+                             key={marker.id}
+                             className="absolute w-10 h-10 text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                             style={{
+                               top: parseInt(marker.y),
+                               left: parseInt(marker.x),
+                               position: "absolute",
+                               zIndex: 10,
+                             }}
+                             onClick={() => {
+                               setSelectedLocation(marker);
+                               setSelectedMarkerIndex(index);
+                               setShowSVG(true);
+                               setIsHovered(false);
+                               setShowInfoCard(true);
+                             }}
+                           >
+                             <LocationMarker
+                               key={marker.id}
+                               location={marker}
+                               index={index}
+                               selectedMarkerIndex={selectedMarkerIndex}
+                               setIsHovered={setIsHovered}
+                               showSVG={showSVG}
+                               isHovered={isHovered}
+                             />
+                           </div>
+                         )
+                       )} */}
 
-                    {/* HealthCare Markers */}
-                    {(showMarkers === "healthcare" ||
-                      showMarkers === "show all") &&
-                      !showSVG &&
-                      mainProjectData?.main_map_healthcare_markers?.map(
-                        (marker) => (
-                          <div
-                            key={marker.id}
-                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                            style={{
-                              top: parseInt(marker.y),
-                              left: parseInt(marker.x),
-                              position: "absolute",
-                              zIndex: 10,
-                            }}
-                          >
-                            <HealthCareMarker
-                              key={marker.id}
-                              location={marker}
-                            />
-                          </div>
-                        )
-                      )}
+                    {/* HealthCare Markers - COMMENTED OUT FOR NOW */}
+                    {/* {(showMarkers === "healthcare" ||
+                       showMarkers === "show all") &&
+                       !showSVG &&
+                       mainProjectData?.main_map_healthcare_markers?.map(
+                         (marker) => (
+                           <div
+                             key={marker.id}
+                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                             style={{
+                               top: parseInt(marker.y),
+                               left: parseInt(marker.x),
+                               position: "absolute",
+                               zIndex: 10,
+                             }}
+                           >
+                             <HealthCareMarker
+                               key={marker.id}
+                               location={marker}
+                             />
+                           </div>
+                         )
+                       )} */}
 
-                    {/* Education Markers */}
-                    {(showMarkers === "education" ||
-                      showMarkers === "show all") &&
-                      !showSVG &&
-                      mainProjectData?.main_map_education_markers?.map(
-                        (marker) => (
-                          <div
-                            key={marker.id}
-                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                            style={{
-                              top: parseInt(marker.y),
-                              left: parseInt(marker.x),
-                              position: "absolute",
-                              zIndex: 10,
-                            }}
-                          >
-                            <EducationMarker
-                              key={marker.id}
-                              location={marker}
-                            />
-                          </div>
-                        )
-                      )}
+                    {/* Education Markers - COMMENTED OUT FOR NOW */}
+                    {/* {(showMarkers === "education" ||
+                       showMarkers === "show all") &&
+                       !showSVG &&
+                       mainProjectData?.main_map_education_markers?.map(
+                         (marker) => (
+                           <div
+                             key={marker.id}
+                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                             style={{
+                               top: parseInt(marker.y),
+                               left: parseInt(marker.x),
+                               position: "absolute",
+                               zIndex: 10,
+                             }}
+                           >
+                             <EducationMarker
+                               key={marker.id}
+                               location={marker}
+                             />
+                           </div>
+                         )
+                       )} */}
 
-                    {/* Shopping Markers */}
-                    {(showMarkers === "shopping" ||
-                      showMarkers === "show all") &&
-                      !showSVG &&
-                      mainProjectData?.main_map_shopping_markers?.map(
-                        (marker) => (
-                          <div
-                            key={marker.id}
-                            className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
-                            style={{
-                              top: parseInt(marker.y),
-                              left: parseInt(marker.x),
-                              position: "absolute",
-                              zIndex: 10,
-                            }}
-                          >
-                            <ShoppingMarker key={marker.id} location={marker} />
-                          </div>
-                        )
-                      )}
+                    {/* Shopping Markers - COMMENTED OUT FOR NOW */}
+                    {/* {(showMarkers === "shopping" ||
+                       showMarkers === "show all") &&
+                       !showSVG &&
+                       mainProjectData?.main_map_shopping_markers?.map(
+                         (marker) => (
+                           <div
+                             key={marker.id}
+                             className="absolute text-white px-2 py-1 rounded-full  transform -translate-x-1/2 -translate-y-1/2"
+                             style={{
+                               top: parseInt(marker.y),
+                               left: parseInt(marker.x),
+                               position: "absolute",
+                               zIndex: 10,
+                             }}
+                           >
+                             <ShoppingMarker key={marker.id} location={marker} />
+                           </div>
+                         )
+                       )} */}
                   </div>
 
                   {/* SVG Line between selected location and markers */}
@@ -382,7 +382,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
                   )}
                   {/* SVG Line between selected location and markers */}
 
-                  {/* Project Buttons with SVGs */}
+                  {/* Project Buttons Only - Icons Removed */}
                   <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                     {/* Oasis Button */}
                     <div
@@ -394,23 +394,15 @@ export default function ProjectMap({ handleMainLocationClick }) {
                         onClick={() => console.log("The Oasis")}
                       >
                         <span className="font-bold text-sm whitespace-nowrap">
-                         The Oasis
+                          The Oasis
                         </span>
                       </button>
-                      <object
-                        data="/oasis.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Oasis SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Grand Polo Button */}
                     <div
                       className="absolute"
-                      style={{ left: "590px", top: "814px" }}
+                      style={{ left: "590px", top: "812px" }}
                     >
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
@@ -420,14 +412,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Grand Polo
                         </span>
                       </button>
-                      <object
-                        data="/grand-polo.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Grand Polo SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Emaar South Button */}
@@ -443,14 +427,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Emaar South
                         </span>
                       </button>
-                      <object
-                        data="/emaar-south.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Emaar South SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Dubai Hills Button */}
@@ -466,14 +442,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Dubai Hills
                         </span>
                       </button>
-                      <object
-                        data="/dubai-hills.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Dubai Hills SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Expo Living Button */}
@@ -489,14 +457,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Expo Living
                         </span>
                       </button>
-                      <object
-                        data="/expo-living.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Expo Living SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Dubai Creek Harbour Button */}
@@ -512,14 +472,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Dubai Creek Harbour
                         </span>
                       </button>
-                      <object
-                        data="/dubai-creek-harbour.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Dubai Creek Harbour SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* Rashid Yachts Button */}
@@ -535,14 +487,6 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           Rashid Yachts
                         </span>
                       </button>
-                      <object
-                        data="/rashid-yachts.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("Rashid Yachts SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
 
                     {/* The Valley Button */}
@@ -558,111 +502,54 @@ export default function ProjectMap({ handleMainLocationClick }) {
                           The Valley
                         </span>
                       </button>
-                      <object
-                        data="/the-valley.svg"
-                        type="image/svg+xml"
-                        className="w-32 h-32 mt-2 pointer-events-auto"
-                        onClick={() => console.log("The Valley SVG")}
-                      >
-                        Your browser does not support SVG
-                      </object>
                     </div>
                   </div>
                   {/* Main Project location SVG End */}
                 </TransformComponent>
 
-                {/* Bottom Buttons Start */}
-                <div className="fixed bottom-0 left-0 w-full pb-5 flex justify-center items-center z-50 scale-50 md:scale-100">
-                  <div className="relative flex items-center justify-center w-full max-w-4xl px-12">
-                    {/* Left Arrow - positioned clearly outside the container */}
-                    {canScrollLeft && (
-                      <button
-                        onClick={scrollLeft}
-                        className="flex-shrink-0 bg-black/70 hover:bg-black text-white rounded-full p-2 mr-2"
-                        aria-label="Scroll left"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 19.5L8.25 12l7.5-7.5"
-                          />
-                        </svg>
-                      </button>
-                    )}
-
-                    {/* Buttons Container - now separate from arrows */}
-                    <div
-                      ref={buttonsContainerRef}
-                      className="flex flex-row justify-start items-center gap-4 overflow-x-auto scrollbar-hide px-4 flex-grow"
-                      onScroll={checkScrollability}
-                      style={{
-                        scrollbarWidth: "none",
-                        msOverflowStyle: "none",
-                        WebkitOverflowScrolling: "touch",
-                      }}
-                    >
-                      {buttons.map((button, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleButtonClick(index)}
-                          className={`bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-4 py-2 cursor-pointer ${
-                            clickedButton === index ? "bg-white text-black" : ""
-                          }`}
-                        >
-                          <span
-                            className={`size-6 ${
-                              clickedButton === index
-                                ? "text-black"
-                                : "text-white"
-                            }`}
-                            dangerouslySetInnerHTML={{ __html: button.svgIcon }}
-                          />
-                          <span
-                            className={`font-bold text-sm whitespace-nowrap ${
-                              clickedButton === index
-                                ? "text-black"
-                                : "text-white"
-                            }`}
-                          >
-                            {button.label}
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Right Arrow - positioned clearly outside the container */}
-                    {canScrollRight && (
-                      <button
-                        onClick={scrollRight}
-                        className="flex-shrink-0 bg-black/70 hover:bg-black text-white rounded-full p-2 ml-2"
-                        aria-label="Scroll right"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                          />
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                </div>
+                {/* Bottom Buttons Start - COMMENTED OUT FOR NOW */}
+                {/* <div className="fixed bottom-0 left-0 w-full pb-5 flex justify-center items-center z-50 scale-50 md:scale-100">
+                   <div className="relative flex items-center justify-center w-full max-w-4xl px-12">
+                     <div
+                       ref={buttonsContainerRef}
+                       className="flex flex-row justify-start items-center gap-4 overflow-x-auto scrollbar-hide px-4 flex-grow"
+                       onScroll={checkScrollability}
+                       style={{
+                         scrollbarWidth: "none",
+                         msOverflowStyle: "none",
+                         WebkitOverflowScrolling: "touch",
+                       }}
+                     >
+                       {buttons.map((button, index) => (
+                         <button
+                           key={index}
+                           onClick={() => handleButtonClick(index)}
+                           className={`bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-4 py-2 cursor-pointer ${
+                             clickedButton === index ? "bg-white text-black" : ""
+                           }`}
+                         >
+                           <span
+                             className={`size-6 ${
+                               clickedButton === index
+                                 ? "text-black"
+                                 : "text-white"
+                             }`}
+                             dangerouslySetInnerHTML={{ __html: button.svgIcon }}
+                           />
+                           <span
+                             className={`font-bold text-sm whitespace-nowrap ${
+                               clickedButton === index
+                                 ? "text-black"
+                                 : "text-white"
+                             }`}
+                           >
+                             {button.label}
+                           </span>
+                         </button>
+                       ))}
+                     </div>
+                   </div>
+                 </div> */}
                 {/* Bottom Buttons End */}
 
                 {/* Add a  slight white overlay should be active when location marker is hovered */}
