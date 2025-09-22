@@ -386,7 +386,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
                   {/* Project Buttons Only - Icons Removed */}
                   <div
                     className="absolute top-0 left-0 w-full h-full pointer-events-none"
-                    style={{ zIndex: 30 }}
+                    style={{ zIndex: 20 }}
                   >
                     {/* Oasis Button */}
                     <div
@@ -534,24 +534,28 @@ export default function ProjectMap({ handleMainLocationClick }) {
                   {/* All Projects SVG Display */}
                   <div
                     className="absolute top-0 left-0 w-full h-full pointer-events-none"
-                    style={{ zIndex: 5 }}
+                    style={{ zIndex: 10 }}
                   >
                     <object
                       data="/all.svg"
                       type="image/svg+xml"
                       className="w-full h-full opacity-80 transition-opacity duration-300"
-                      style={{ pointerEvents: "auto" }}
+                      style={{ pointerEvents: "auto", zIndex: 1 }}
                       onLoad={() => {
+                        console.log(
+                          "SVG object loaded, setting up event listeners..."
+                        );
                         // Add click event listeners to SVG paths after load
                         setTimeout(() => {
                           const svgDoc = document.querySelector(
                             'object[data="/all.svg"]'
                           )?.contentDocument;
-                          console.log(
-                            "SVG loaded, setting up event listeners..."
-                          );
                           console.log("SVG document:", svgDoc);
+
                           if (svgDoc) {
+                            console.log(
+                              "SVG document found, adding event listeners..."
+                            );
                             // Add click handlers to each property path
                             const properties = [
                               "the-oasis-property",
@@ -573,10 +577,38 @@ export default function ProjectMap({ handleMainLocationClick }) {
                               );
                               elements.forEach((element) => {
                                 element.style.cursor = "pointer";
-                                element.addEventListener("click", (e) => {
+                                element.style.pointerEvents = "auto";
+
+                                // Remove existing listeners to avoid duplicates
+                                element.removeEventListener(
+                                  "click",
+                                  handleClick
+                                );
+                                element.removeEventListener(
+                                  "mouseenter",
+                                  handleMouseEnter
+                                );
+                                element.removeEventListener(
+                                  "mouseleave",
+                                  handleMouseLeave
+                                );
+
+                                // Add new listeners
+                                element.addEventListener("click", handleClick);
+                                element.addEventListener(
+                                  "mouseenter",
+                                  handleMouseEnter
+                                );
+                                element.addEventListener(
+                                  "mouseleave",
+                                  handleMouseLeave
+                                );
+
+                                function handleClick(e) {
                                   e.preventDefault();
                                   e.stopPropagation();
                                   console.log(`SVG clicked: ${propertyClass}`);
+
                                   let propertyName = propertyClass
                                     .replace("-property", "")
                                     .replace("-", " ")
@@ -620,19 +652,33 @@ export default function ProjectMap({ handleMainLocationClick }) {
                                   }
 
                                   console.log(propertyName);
-                                });
-                                element.addEventListener("mouseenter", (e) => {
+                                }
+
+                                function handleMouseEnter(e) {
                                   e.target.style.fill = "rgb(141, 122, 71)";
                                   e.target.style.opacity = "0.8";
-                                });
-                                element.addEventListener("mouseleave", (e) => {
+                                }
+
+                                function handleMouseLeave(e) {
                                   e.target.style.fill = "";
                                   e.target.style.opacity = "";
-                                });
+                                }
                               });
                             });
+                          } else {
+                            console.log("SVG document not found, retrying...");
+                            // Retry after another delay
+                            setTimeout(() => {
+                              const retrySvgDoc = document.querySelector(
+                                'object[data="/all.svg"]'
+                              )?.contentDocument;
+                              if (retrySvgDoc) {
+                                console.log("SVG document found on retry");
+                                // Repeat the same logic here if needed
+                              }
+                            }, 2000);
                           }
-                        }, 1000); // 1 second delay to ensure SVG is fully loaded
+                        }, 1500); // Increased delay to ensure SVG is fully loaded
                       }}
                     >
                       Your browser does not support SVG
