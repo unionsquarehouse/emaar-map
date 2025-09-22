@@ -622,7 +622,7 @@ export default function ProjectMap({ handleMainLocationClick }) {
                                   console.log(propertyName);
                                 });
                                 element.addEventListener("mouseenter", (e) => {
-                                  e.target.style.fill = "#3b82f6";
+                                  e.target.style.fill = "rgb(141, 122, 71)";
                                   e.target.style.opacity = "0.8";
                                 });
                                 element.addEventListener("mouseleave", (e) => {
