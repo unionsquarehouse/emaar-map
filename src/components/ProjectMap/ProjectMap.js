@@ -384,7 +384,10 @@ export default function ProjectMap({ handleMainLocationClick }) {
                   {/* SVG Line between selected location and markers */}
 
                   {/* Project Buttons Only - Icons Removed */}
-                  <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                  <div
+                    className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                    style={{ zIndex: 30 }}
+                  >
                     {/* Oasis Button */}
                     <div
                       className="absolute"
@@ -392,7 +395,11 @@ export default function ProjectMap({ handleMainLocationClick }) {
                     >
                       <button
                         className="bg-black flex-shrink-0 flex flex-row items-center gap-2 text-white rounded-full px-5 py-3 cursor-pointer hover:bg-white hover:text-black transition-all duration-300 pointer-events-auto z-20"
-                        onClick={() => console.log("The Oasis")}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          console.log("Button clicked: The Oasis");
+                        }}
                         onMouseEnter={() => setHoveredProject("oasis")}
                         onMouseLeave={() => setHoveredProject(null)}
                       >
@@ -524,19 +531,113 @@ export default function ProjectMap({ handleMainLocationClick }) {
                     </div>
                   </div>
 
-                  {/* Hovered Project SVG Display */}
-                  {hoveredProject && (
-                    <div
-                      className="absolute top-0 left-0 w-full h-full pointer-events-none"
-                      style={{ zIndex: 15 }}
+                  {/* All Projects SVG Display */}
+                  <div
+                    className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                    style={{ zIndex: 5 }}
+                  >
+                    <object
+                      data="/all.svg"
+                      type="image/svg+xml"
+                      className="w-full h-full opacity-80 transition-opacity duration-300"
+                      style={{ pointerEvents: "auto" }}
+                      onLoad={() => {
+                        // Add click event listeners to SVG paths after load
+                        setTimeout(() => {
+                          const svgDoc = document.querySelector(
+                            'object[data="/all.svg"]'
+                          )?.contentDocument;
+                          console.log(
+                            "SVG loaded, setting up event listeners..."
+                          );
+                          console.log("SVG document:", svgDoc);
+                          if (svgDoc) {
+                            // Add click handlers to each property path
+                            const properties = [
+                              "the-oasis-property",
+                              "emaar-south-property",
+                              "the-valley-property",
+                              "dubai-hills-property",
+                              "grand-polo-property",
+                              "dubai-creek-harbour-property",
+                              "expo-living-property",
+                              "rashid-yachts-property",
+                            ];
+
+                            properties.forEach((propertyClass) => {
+                              const elements = svgDoc.querySelectorAll(
+                                `.${propertyClass}`
+                              );
+                              console.log(
+                                `Found ${elements.length} elements for ${propertyClass}`
+                              );
+                              elements.forEach((element) => {
+                                element.style.cursor = "pointer";
+                                element.addEventListener("click", (e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  console.log(`SVG clicked: ${propertyClass}`);
+                                  let propertyName = propertyClass
+                                    .replace("-property", "")
+                                    .replace("-", " ")
+                                    .replace(/\b\w/g, (l) => l.toUpperCase());
+
+                                  // Correct property names based on mapping
+                                  if (propertyClass === "the-oasis-property") {
+                                    propertyName = "The Oasis";
+                                  }
+                                  if (
+                                    propertyClass === "emaar-south-property"
+                                  ) {
+                                    propertyName = "Emaar South";
+                                  }
+                                  if (propertyClass === "the-valley-property") {
+                                    propertyName = "The Valley";
+                                  }
+                                  if (
+                                    propertyClass === "dubai-hills-property"
+                                  ) {
+                                    propertyName = "Dubai Hills";
+                                  }
+                                  if (propertyClass === "grand-polo-property") {
+                                    propertyName = "Grand Polo";
+                                  }
+                                  if (
+                                    propertyClass ===
+                                    "dubai-creek-harbour-property"
+                                  ) {
+                                    propertyName = "Dubai Creek Harbour";
+                                  }
+                                  if (
+                                    propertyClass === "expo-living-property"
+                                  ) {
+                                    propertyName = "Expo Living";
+                                  }
+                                  if (
+                                    propertyClass === "rashid-yachts-property"
+                                  ) {
+                                    propertyName = "Rashid Yachts";
+                                  }
+
+                                  console.log(propertyName);
+                                });
+                                element.addEventListener("mouseenter", (e) => {
+                                  e.target.style.fill = "#3b82f6";
+                                  e.target.style.opacity = "0.8";
+                                });
+                                element.addEventListener("mouseleave", (e) => {
+                                  e.target.style.fill = "";
+                                  e.target.style.opacity = "";
+                                });
+                              });
+                            });
+                          }
+                        }, 1000); // 1 second delay to ensure SVG is fully loaded
+                      }}
                     >
-                      <img
-                        src={`/${hoveredProject}.svg`}
-                        alt={hoveredProject}
-                        className="w-full h-full opacity-80 transition-opacity duration-300"
-                      />
-                    </div>
-                  )}
+                      Your browser does not support SVG
+                    </object>
+                  </div>
                   {/* Main Project location SVG End */}
                 </TransformComponent>
 
